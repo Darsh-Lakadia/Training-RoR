@@ -26,12 +26,12 @@ class Calculator
     
     when @choice == 4
         div = Proc.new {|op1,op2| op1 / op2}
-        p div.call(@operand1.,@operand2)
+        p div.call(@operand1,@operand2)
     
     when @choice == 5
         exp= Proc.new {|op1,op2| op1 ** op2}
         p exp.call(@operand1,@operand2)
-    
     else
+    		puts "Wrong Input!!!"
     end
 end
