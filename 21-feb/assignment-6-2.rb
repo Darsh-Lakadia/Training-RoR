@@ -1,7 +1,7 @@
 require 'json'
 file = File.open("phonebook.txt","r")
 dictonary = eval(file.read)
-puts dictonary
+puts dictonary.class
 puts "Enter your Choice"
 puts "1. Find number with person's name"
 puts "2. Save New number with name"
@@ -9,16 +9,16 @@ puts "3. Delete number"
 choice = gets.chomp.to_i
 write_to_file = lambda{
   write_file=File.open("phonebook.txt","w") do |file|
-    file.puts dictonary.to_s
+    file.puts dictonary
   end  
 }
 
 case 
 when choice ==1
-  puts "Enter name:"
+  puts "Enter name "
   name = gets.chomp
-  if dictonary.has_key?name
-    puts dictonary[name]
+  if dictonary.has_key?name.to_sym
+    puts dictonary[name.to_sym]
   else
     puts "No name found"
   end
@@ -29,12 +29,12 @@ when choice ==2
   puts "Enter mobile number"
   number = gets.chomp
 
-  if dictonary.has_key?name
+  if dictonary.has_key?name.to_sym
     puts "Already name is present"
 
   elsif dictonary.key(number) == nil
     hash = {}
-    hash[name] = number  
+    hash[name.to_sym] = number  
     dictonary=dictonary.merge(hash)
     write_to_file.call
   else
@@ -49,8 +49,10 @@ when choice ==3
   when option ==1
     puts "Enter Name you want to delete"
     name = gets.chomp
-    if dictonary.has_key?name
-      dictonary.delete(name)
+    puts name
+    puts name.to_sym
+    if dictonary.has_key?name.to_sym
+      dictonary.delete(name.to_sym)
       write_to_file.call      
     else
       puts "Not Found Name"
@@ -68,7 +70,3 @@ when choice ==3
 else
   puts "nothing..."
 end
-# find_number = Proc.new{ 
-#   |name|
-#   while 
-# }
