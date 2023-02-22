@@ -53,11 +53,14 @@ module Bank
 				@dep_money = gets.chomp.to_i
 				proc2 = Proc.new {@curr_obj.deposit_money(@dep_money)}
 				proc2.call 
+				puts "Account balance after deposit money is : #{@curr_obj.acc_balance}"
+				
 			when choice == 3
 				puts "Enter amount you want to withdraw"
 				@w_money = gets.chomp.to_i
 				lambda1 = -> {   @curr_obj.withdraw_money(@w_money)}
 				lambda1.call
+				puts "Account balance after withdraw money is : #{@curr_obj.acc_balance}"
 			else
 				puts "/******SEE YOU AGAIN****/"
 			end
