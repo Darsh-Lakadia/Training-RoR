@@ -30,7 +30,11 @@ module Bank
 		def start
 			puts "Enter Your PIN"
 			@pin = gets.chomp.to_i
-			
+			if @pin == 1234
+				show_options
+			else
+				puts "Entered PIN is not Correct."
+			end
 		end
 		def show_options
 			puts "Enter your choice..."
@@ -42,7 +46,7 @@ module Bank
 			
 			case
 			when choice==1
-				puts "display msg"
+				puts "Your Account Balance is:"
 				p @curr_obj.acc_balance
 			when choice == 2
 				puts "Enter amount you want to deposit"
@@ -72,7 +76,5 @@ module Bank
 	p ac1.acc_balance
 	atm1 = Atm.new(ac1)
 	atm1.start
-	atm1.show_options
-	puts "your balance is : #{ac1.acc_balance}"
 	# ac1.display_balance
 end
