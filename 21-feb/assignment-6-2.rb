@@ -1,7 +1,7 @@
 require 'json'
 file = File.open("phonebook.txt","r")
 dictonary = eval(file.read)
-puts dictonary.class
+
 puts "Enter your Choice"
 puts "1. Find number with person's name"
 puts "2. Save New number with name"
