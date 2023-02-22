@@ -14,7 +14,6 @@ while i < content.length
   end
   i+=1
 end
-puts hash
 proc = Proc.new{ output = File.new("output.txt","w+")
 hash.each do
   |k,v|
