@@ -9,9 +9,8 @@ class Product
 		puts "Enter GST"
 		@gst = gets.chomp.to_i
 	end
-	#def get_user
-	#end
-	def gstcalc()
+	
+	def gstcalc
 		puts "Welcome to #{SHOP_NAME}"
 		puts "Welcome #{@name}. Your invoice with #{@gst}% gst are below"
 		calc = (@gst * @product_price )/ 100
@@ -22,4 +21,4 @@ class Product
 end
 
 product = Product.new('cpu',100)
-product.gstcalc()
+product.gstcalc
