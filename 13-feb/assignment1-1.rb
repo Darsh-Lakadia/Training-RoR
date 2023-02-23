@@ -14,9 +14,9 @@ class Product
 		puts "Welcome to #{SHOP_NAME}"
 		puts "Welcome #{@name}. Your invoice with #{@gst}% gst are below"
 		calc = (@gst * @product_price )/ 100
-		@gst_price = @product_price + calc
+		gst_price = @product_price + calc
 		puts "product details"
-		print "#{$company_name} #{@product_name} - #{@gst_price} \n" 
+		print "#{$company_name} #{@product_name} - #{gst_price} \n" 
 	end
 end
 
