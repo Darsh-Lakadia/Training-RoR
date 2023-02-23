@@ -1,5 +1,5 @@
 SHOP_NAME = "Lakadia Computers"
-COMPANY_NAME = "Lakadia & Sons"
+COMPANY_NAME = "Lakadia Brothers"
 class Product
 	def initialize(name,price)
 		@product_name = name
